@@ -1,6 +1,31 @@
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
+
+### Reflection on how to generate paths
+
++ sensor fusion, s and d data goes to behavior planer
++ behavior planer checks lanes for cars
++ behavior planer choose best lane for pass
++ behavior planer checks for speed limit
++ behavior planer returns (s, d, speed) goal for lane changing if possible
++ trajectory takes goal input and car localization Data x,y,yaw and previous path xy
++ trajectory takes previous path xy as start point and goal xy as end point
++ trajectory converts to car coordinates
++ trajectory use spline lib to calculate trajectory spline
++ trajectory use spline for y values and convert to map coordinate  
    
+### Reflection on Result
+
+The implementation works most of the time. I archived several simulator runs where the car 
+drove for a long time without any problems (s. screenshots).
+From time to it happens that while the lane changing, that a other car gets into the path. This
+results in a wobbling of the car. I know this bug but ran out of time to fix it.
+
+![sim 1](img/sim1.png)
+![sim 2](img/sim2.png)
+![sim 3](img/sim3.png)
+   
+# Original Readme   
 ### Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2).  
 
